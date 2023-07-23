@@ -1,12 +1,10 @@
 import { join } from 'node:path'
 import express from 'express'
-// import cors, { CorsOptions } from 'cors'
 
 const server = express()
 
 server.use(express.json())
 server.use(express.static(join(__dirname, './public')))
-// server.use(cors('*' as CorsOptions))
 
 server.get('/triangle', (req, res) => {
   const { a, b, c } = req.query
@@ -17,7 +15,7 @@ server.get('/triangle', (req, res) => {
   if (angle_a + angle_b + angle_c !== 180) {
     res.status(400)
     res.json(
-      'error, shape is not a triangle as angles do not equal 180 degrees'
+      'ERROR STATUS: 400: deformed parameters provided.  shape is not a triangle as angles do not equal 180 degrees'
     )
   } else if (angle_a == angle_b && angle_b == angle_c) {
     res.status(200)
