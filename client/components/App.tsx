@@ -7,6 +7,11 @@ const App = () => {
         interior angles
       </p>
       <p>
+        To test angles, please amend a, b and c values of the url in order to
+        validate the type of triangle it may be.
+      </p>
+
+      <p>
         https://techtestrestapp-production.up.railway.app/triangle?a={}&b={}&c=
         {}
       </p>
